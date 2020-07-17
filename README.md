@@ -1,1 +1,1 @@
-Questões de implementação da prova 1 de Projeto de Arquivos, pelo Prof. Allan Rodrigo Leite
+Questões de implementação da prova 1 da disciplina Projeto de Arquivos, ministrada pelo Prof. Allan Rodrigo Leite.
