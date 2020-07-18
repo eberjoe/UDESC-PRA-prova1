@@ -1,9 +1,9 @@
+// ATENÇÃO: Não funciona com acentuação porque restrito a ASCII
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #define MAX 50
-
-// Não funciona com acentuação porque restrito a ASCII
 
 int lev(int x, int y, char* s1, char* s2);
 
