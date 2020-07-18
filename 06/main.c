@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 #define MAX 50
 
 int lev(int x, int y, char* s1, char* s2);
 
 int main() {
     char str1[MAX], str2[MAX];
-    int **matriz, t1, t2, i, j;
+    int t1, t2, i, j, distancia;
     printf("Entre a primeira string: ");
     fgets(str1, MAX, stdin);
     printf("Entre a segunda string: ");
@@ -18,23 +19,16 @@ int main() {
         str1[i] = str1[i - 1];
     for (i = t2 - 1; i; i--)
         str2[i] = str2[i - 1];
-    matriz = malloc(sizeof(int*) * t2);
-    for (i = 0; i < t2; i++)
-        matriz[i] = malloc(sizeof(int) * t1);
+    printf("%s\n", str1);
+    printf("%s\n", str2);
     for (i = 0; i < t2; i++) {
         for (j = 0; j < t1; j++) {
-            matriz[i][j] = lev(j, i, str1, str2);
-        }
-    }
-    for (i = 0; i < t2; i++) {
-        for (j = 0; j < t1; j++) {
-            printf("%d\t", matriz[i][j]);
+            distancia = lev(j, i, str1, str2);
+            printf("%d\t", distancia);
         }
         printf("\n");
     }
-    for (i = 0; i < t2; i++)
-        free(matriz[i]);
-    free(matriz);
+    printf("\nA distância de Levenshtein é %d\n", distancia);
     return 1;
 }
 
